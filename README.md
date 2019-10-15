@@ -26,14 +26,14 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, index: true|
 |email|string|null: false|
 |password|string|null: false|
 
 ### Association
-- has_many: messages
-- has_many: groups
-- has_many: groups, through:users_groups
+- has_many :messages
+- has_many :users_groups
+- has_many :groups, through: :users_groups
 
 
 
@@ -41,10 +41,10 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|string|null: false|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|body|text|
+|image|string|
+|group|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -56,13 +56,13 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|menber|string|null: false|
+|name|string|null: false, index: true|
+
 
 ### Association
-- has_many: messages
-- has_many: users
-- has_many: users_groups, through:users_groups
+- has_many :messages
+- has_many :users_groups
+- has_many :users, through: :users_groups
 
 
 
@@ -70,8 +70,8 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|users_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|users|reference|null: false, foreign_key: true|
+|group|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
