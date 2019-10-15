@@ -52,7 +52,7 @@ Things you may want to cover:
 
 
 
-## groupsテーブル
+### groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
