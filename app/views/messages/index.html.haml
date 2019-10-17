@@ -1,0 +1,48 @@
+.flash-box
+  .notice グループを作成しました
+.wrapper
+  .chat-side
+    .side-header
+      .side-header_box
+        %p.side-header_box_user-name
+          muraoka
+        %ul.side-header_box_menu
+          %li.side-header_box_menu_new-group
+            %a{:href => "#"}
+              %i.fa.fa-edit
+          %li.side-header_box_menu_edit-user
+            %a{:href => "#"}
+              %i.fa.fa-cog
+    .groups
+      %a{:href => "#"}
+        .group
+          %p.group_group-name sample
+          %p.group_latest-message hello
+      %a{:href => "#"}
+        .group
+          %p.group_group-name muraoka
+          %p.group_latest-message yyyyy
+.chat-main
+  .main-header
+    .main-header_left-box
+      %h2.main-header_left-box_current-group{"data-group_id" => "#"}
+        take
+      %ul.main-header_left-box_member-list
+        Member:
+        %li.main-header_left-box_menber-list_member
+          yuya
+        %li.main-header_left-box_member-list_member
+          muraoka
+    %a{:href => "#"}
+      .main-header_edit-btn Edit
+  .messages
+  .form
+    %form#new_message.new_message{"accept-charset" => "UTF-8", :action => "#", :enctype => "multipart/form-data", :method => "post"}
+      %input{:name => "utf8", :type => "hidden", :value => "#"}/
+      %input{:name => "authenticity_token", :type => "hidden", :value => "#"}/
+      .input-box
+        %input#message_content.input-box_text{:name => "message[content", :placeholder => "type a message", :type => "text"}/
+        %label.input-box_image{:for => "message_image"}
+          %i.fa.fa-image
+          %input#message_image.input-box_image_file{:name => "message[image]", :type => "file"}/
+      %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "send"}/
