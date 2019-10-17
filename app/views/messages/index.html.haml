@@ -1,5 +1,7 @@
 .flash-box
   .notice グループを作成しました
+
+-# -side-
 .wrapper
   .chat-side
     .side-header
@@ -22,6 +24,8 @@
         .group
           %p.group_group-name muraoka
           %p.group_latest-message yyyyy
+
+-# -main-
 .chat-main
   .main-header
     .main-header_left-box
@@ -36,6 +40,7 @@
     =link_to do
       .main-header_edit-btn Edit
   .messages
+  
   .form
     %form#new_message.new_message{"accept-charset": "UTF-8", action: "#", enctype: "multipart/form-data", method: "post"}
       %input{name: "utf8", type: "hidden", value: "#"}/
@@ -45,4 +50,4 @@
         %label.input-box_image{for: "message_image"}
           %i.fa.fa-image
           %input#message_image.input-box_image_file{name: "message[image]", type: "file"}/
-      %input.submit-btn{"data-disable-with" => "Send", name: "commit", type: "submit", value: "send"}/
+      %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "send"}/
