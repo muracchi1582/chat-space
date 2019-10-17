@@ -58,6 +58,10 @@ body {
   font-weight: bold;
 }
 
+.side-header_box_menu {
+  display: flex;
+}
+
 .side-header_box_menu li {
   margin-left: 0.3rem;
 }
@@ -96,7 +100,6 @@ a:-webkit-any-link {
   height: calc(100vh - 100px);
   background-color: #2f3e51;
   padding: 20px 20px 0;
-  overflow: scroll;
 }
 
 .chat-side a {
@@ -137,8 +140,7 @@ label {
 
 // -main-
 .chat-main {
-  width: calc(100vw-300px);
-  float: left;
+  width: 100%
 }
 
 .main-header {
@@ -147,7 +149,6 @@ label {
   display: flex;
   justify-content: space-between;
   border-bottom: solid 1px #eee;
-  overflow: scroll;
 }
 
 .main-header_left-box {
@@ -185,10 +186,9 @@ label {
 }
 
 .messages {
-  height: calc(100vh-190px);
+  height: calc(100vh - 190px);
   padding: 46px 40px;
   background-color: #fafafa;
-  overflow: scroll;
 }
 
 .form {
@@ -199,6 +199,7 @@ label {
 
 .form form {
   display: flex;
+  margin-left: 300px;
 }
 
 .input-box {
@@ -209,7 +210,7 @@ label {
 .input-box_text {
   height: 50px;
   width: 100%;
-  padding: 0 40px 0 10px;
+  padding: 10px 40px 10px 40px;
   color: #434a54;
   border-style: none;
 }
@@ -227,7 +228,7 @@ label {
 }
 
 .submit-btn {
-  width: 100%;
+  width: 100px;
   height: 50px;
   padding: 0 30px;
   margin-left: 15px;
