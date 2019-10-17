@@ -1,4 +1,5 @@
 <div class="flash-box">
+  <div class="notice">グループを作成しました</div>
 </div>
 
 <div class="wrapper">
@@ -29,8 +30,58 @@
           <p class="group_latest-message">hello</p>
         </div>
       </a>
+      <a href="#">
+        <div class="group">
+          <p class="group_group-name">muraoka</p>
+          <p class="group_latest-message">yyyyy</p>
+        </div>
+       </a> 
     </div>
    </div>
-  </div>  
+  </div>
+
+  <div class="chat-main">
+    <div class="main-header">
+      <div class="main-header_left-box">
+        <h2 class="main-header_left-box_current-group" data-group_id="#">
+          take
+        </h2>
+        <ul class="main-header_left-box_member-list">
+          Member:
+          <li class="main-header_left-box_menber-list_member">
+            yuya</li>
+            <li class="main-header_left-box_member-list_member">
+              muraoka masatoshi</li>
+        </ul>
+       </div>
+       <a href="#"></a>
+      </div>
+     <div class="messages">
+     </div>         
+
+    <div class="form">
+      <form class="new_message" id="new_message"
+        enctype="multipart/form-data" action="#"
+         accept-charset="UTF-8" method="post">
+          <input name="utf8" type="hidden" value="#">
+          <input type="hidden" name="authenticity_token" value="#">
+
+          <div class="input-box">
+            <input placeholder="type a message"
+              class="input-box_text" type="text"
+              name="message[content" id="message_content">
+
+              <label class="input-box_image" for="message_image">
+                <i class="fa fa-image"></i>
+                <input class="input-box_image_file" type="file"
+                 name="message[image]" id="message_image">
+               </label>
+              </div>
+              <input type="submit" name="commit" value="send"
+               class="submit-btn" data-disable-with="Send">
+    </form>
+   </div>
+  </div>
+</div> 
   
 
