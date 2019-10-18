@@ -1,0 +1,12 @@
+.chat-group-form
+  %h1 新規チャットグループ
+  - if @group.errors.any?
+    .chat-group__error
+      %p.error-count
+        = @group.errors.count
+        件のエラーが発生しました。
+        - @group.errors.full_messages.each do |message|
+          %p.error-message
+          = message
+
+  = render partial: 'form', locals: { group: @group }
