@@ -1,53 +1,26 @@
-.flash-box
-  .notice グループを作成しました
+.wrapper
+  = render 'shared/side_bar'
+  .right
+    .right__contents
+      %p.right__contents-group
+        = @group.name
+      %p.right__contents-member
+        Members:
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(@group) do
+      .right__contents-button
+        %p.edit Edit
 
--# -side-
--# .wrapper
--#   .chat-side
--#     .side-header
--#       .side-header_box
--#         %p.side-header_box_user-name
--#           muraoka
--#         %ul.side-header_box_menu
--#           %li.side-header_box_menu_new-group
--#             =link_to "#" do
--#               =fa_icon 'edit'
--#           %li.side-header_box_menu_edit-user
--#             =link_to "#" do
--#               =fa_icon 'cog'
--#     .groups
--#       =link_to "#" do
--#         .group
--#           %p.group_group-name sample
--#           %p.group_latest-message hello
--#       =link_to "#" do
--#         .group
--#           %p.group_group-name muraoka
--#           %p.group_latest-message yyyyy
+    .right__contents--bellow
+      = render @messages
 
--# -main-
--# .chat-main
--#   .main-header
--#     .main-header_left-box
--#       %h2.main-header_left-box_current-group{"data-group_id": "#"}
--#         take
--#       %ul.main-header_left-box_member-list
--#         Member:
--#         %li.main-header_left-box_menber-list_member
--#           yuya
--#         %li.main-header_left-box_member-list_member
--#           muraoka
--#     =link_to do
--#       .main-header_edit-btn Edit
--#   .messages
-  
--#   .form
--#     %form#new_message.new_message{"accept-charset": "UTF-8", action: "#", enctype: "multipart/form-data", method: "post"}
--#       %input{name: "utf8", type: "hidden", value: "#"}/
--#       %input{name: "authenticity_token", type: "hidden", value: "#"}/
--#       .input-box
--#         %input#message_content.input-box_text{name: "message[content", placeholder: "type a message", type: "text"}/
--#         %label.input-box_image{for: "message_image"}
--#           %i.fa.fa-image
--#           %input#message_image.input-box_image_file{name: "message[image]", type: "file"}/
--#       %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "send"}/
+  .form
+    .form__message
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message--post', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = f.file_field :image, class: 'hidden'
+            = fa_icon 'picture-o', class: 'icon'
+        = f.submit 'Send', class: 'form__submit'
