@@ -2,13 +2,10 @@
 
 $(function(){
   function buildHTML(message){
-    var html = `<p>
-                  <strong>
-                    <a href=/users/${comment.user_id}>${comment.user_name}</a>
-                    ：
-                  </strong>
-                  ${comment.text}
-                </p>`
+    var html = `<div class= "right__contents--bellow__box" data-message-id="${message.id}">
+                 <div class="raight__contents--bellow__box--name">${message.name}</div>
+                 <div class="right__contents--bellow__box--time">${message.created_at}</div>
+                </div>`
     return html;
   }
 
@@ -18,7 +15,7 @@ $(function(){
     var url = $(this).attr('action');
     
     $.ajax({
-      url: href,
+      url: url,
       type: "POST",
       data: formData,
       dataType: 'json',
@@ -28,8 +25,12 @@ $(function(){
 
     .done(function(data){
       var html = buildHTML(data);
-      $('.comments').append(html)
-      $('.textbox').val('')
+      $('.right__contens--bellow').append(html);
+      $('.form__message--post').val('');
+      $('.form__submit').prop('disabled', false);
+    })
+    .fail(function(){
+      alert('error');
     })
   })
 });
