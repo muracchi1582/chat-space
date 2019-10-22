@@ -1,4 +1,4 @@
-$((document).on('turbolinks:load', function(){
+$(document).on('turbolinks:load', function(){
 
   function buildHTML(message){
     var image = "";
@@ -10,8 +10,8 @@ $((document).on('turbolinks:load', function(){
                   <div class="raight__contents--bellow__box--name">${message.name}</div>
                   <div class="right__contents--bellow__box--time">${message.created_at}</div>
                 </div>`
-                ${ content }
-                ${ image }
+                {content}
+                {image}
     return html;
   }
 
@@ -22,6 +22,7 @@ $((document).on('turbolinks:load', function(){
   }
 
   $('#new_message').on('submit', function(e){
+    console.log("ee");
     e.preventDefault();
     var formData = new FormData($(this).get(0));
     var url = $(this).attr('action');
@@ -36,6 +37,7 @@ $((document).on('turbolinks:load', function(){
     })
 
     .done(function(data){
+      console.log("ok");
       var html = buildHTML(data);
       $('.right__contens--bellow').append(html);
       $('.form__message--post').val('');
