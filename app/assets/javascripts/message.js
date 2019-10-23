@@ -1,17 +1,19 @@
-$(document).on('turbolinks:load', function(){
 
+$(function(){
   function buildHTML(message){
-    var image = "";
-    var content = "";
-    image = (message.image) ? `<image class="lower--message__image right__contents--bellow__box-message" src="${message.image}">`:"";
-    content = (message.content) ? `<div class="right__contents--bellow__box-message">${message.content}</div>` : "";
+    //  var image = "";
+    //  var content = "";
+    //  image = (message.image) ? `<image class="lower--message__image right__contents--bellow__box-message" src="${message.image}">`:"";
+    //  content = (message.content) ? `<div class="right__contents--bellow__box-message">${message.content}</div>` : "";
 
     var html = `<div class= "right__contents--bellow__box" data--message--id="${message.id}">
-                  <div class="right__contents--bellow__box--name">${message.name}</div>
-                  <div class="right__contents--bellow__box--time">${message.created_at}</div>
+                  <div class= "right__contents--bellow__box--name">${message.name}</div>
+                  <div class= "right__contents--bellow__box--time">${message.created_at}</div>
+                  <div class= "right__contents--bellow__box--message">${message.content}</div>
+                  <image class="lower--message__image right__contents--bellow__box-message" src="${message.image}">
                 </div>`
-                {content}
-                {image}
+                  // {content}
+                  // {image}
     return html;
   }
 
@@ -35,13 +37,14 @@ $(document).on('turbolinks:load', function(){
     })
     
     .done(function(data){
+      console.log(data)
       var html = buildHTML(data);
-      $('.right__contens--bellow').append(html);
+      $('.right__contents--bellow').append(html);
       $('.form__message--post').val('');
       $('.form__submit').prop('disabled', false);
     })
     .fail(function(){
       alert('error');
     })
-   
+  }) 
 });
