@@ -36,7 +36,6 @@ $(function(){
     })
     
     .done(function(data){
-      console.log(data)
       var html = buildHTML(data);
       $('.right__contents--bellow').append(html);
       $('.form__message--post').val('');
