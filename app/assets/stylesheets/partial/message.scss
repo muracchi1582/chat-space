@@ -42,7 +42,7 @@
     }
 
     &__bellow {
-      overflow-y: auto;
+      overflow: scroll;
       padding: 20px;
       &-group {
         font-size: 15px;
@@ -87,9 +87,8 @@
         }
       }
       &--bellow {
-        padding-top: 26px;
-        overflow-y: auto;
-        height: calc(100vh - 220px);
+        overflow-y: scroll;
+        height: calc(100vh - 190px);
         &__box {
           padding:20px 0px 20px 40px;
           &-name {
@@ -115,7 +114,7 @@
     padding-left: 40px;
     padding-right: 40px;
     background-color: #eeeeee;
-    position: absolute;
+    position: fixed;
     bottom: 0px;
     left: 300px;
     width: calc( 100vw - 380px );
