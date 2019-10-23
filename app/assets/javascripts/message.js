@@ -39,7 +39,8 @@ $(function(){
       var html = buildHTML(data);
       $('.right__contents--bellow').append(html);
       $('.form__message--post').val('');
-      $('.form__submit').prop('disabled', false);
+      // $('.form__submit').prop('disabled', false);
+      $('.form__submit')[0].reset();
     })
     .fail(function(){
       alert('error');
