@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
        format.json { @messages = @group.messages.includes(:user).where('id > ? ', params[:id])}
      end
   end
-
+aaa
   def create
     @message = @group.messages.new(message_params)
     if @message.save
