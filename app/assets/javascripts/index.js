@@ -6,7 +6,7 @@ $(function(){
                 </div>`
     return html;
   }
-  aa
+  
   function appendUser(id, name) {
     var html = `<div class="chat-group-user">
                   <input name="group[user_ids][]" type="hidden" value="${ id }">
