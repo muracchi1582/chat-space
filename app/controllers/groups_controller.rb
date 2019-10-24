@@ -2,11 +2,12 @@ class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
 
   def index
-    @group = groups.order(id: :DESC)
+    @group = current_user.groups.order(id: :DESC)
   end
 
   def new
     @group = Group.new
+    @group.users << current_user
   end
 
   def create
