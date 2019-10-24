@@ -2,8 +2,9 @@
 $(function(){
   function buildHTML(message){
       var image = "";
-    
+      var content = "";
       image = (message.image) ? `<image class="lower--message__image right__contents--bellow__box-message" src="${message.image}">`:"";
+      content = (message.content) ? `<div class="right__contents--bellow__box-message">${message.content}</div>` : "";
 
     var html = `<div class= "right__contents--bellow__box" data--message--id="${message.id}">
                   <div class= "right__contents--bellow__box--name">${message.name}</div>
