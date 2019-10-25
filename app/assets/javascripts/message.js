@@ -42,11 +42,9 @@ $(function(){
   }) 
 
 
-// 自動更新機能
   var reloadMessages = function() {
     var last_message = $(".right__contents--bellow__box:last").data("message-id");
     var last_message_id = $(".right__contents--bellow__box:last").data("message-id"); 
-    console.log(last_message_id)
   
     $.ajax({
       url: "api/messages",
@@ -55,7 +53,6 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log(messages)
       var insertHTML = '';
       messages.forEach(function (message){
         if(message.id > last_message){
