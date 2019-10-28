@@ -2,7 +2,7 @@
 $(function(){
   function buildHTML(message){
     
-      var image = (message.image) ? `<image class="lower--message__image right__contents--bellow__box-message" src="${message.image.url}">`:"";
+      var image = (message.image.url) ? `<image class="lower--message__image right__contents--bellow__box-message" src="${message.image.url}">`:"";
       var content = (message.content) ? `<div class="right__contents--bellow__box-message">${message.content}</div>` : "";
 
     var html = `<div class= "right__contents--bellow__box" data-message-id="${message.id}">
@@ -33,10 +33,12 @@ $(function(){
       $('.right__contents--bellow').append(html);
       $('.new_message')[0].reset();
       $('.right__contents--bellow').animate({scrollTop: $('.right__contents--bellow')[0].scrollHeight}, 'fast');
-      // $('.form__submit').prop('disabled', false);
+      $('.form__submit').attr('disabled', false);
+      $('.form__message--post').val('');
       
     })
     .fail(function(){
+      $('.form__submit').attr('disabled', false);
       alert('error');
     })
   }) 
