@@ -33,7 +33,7 @@ $(function(){
       $('.right__contents--bellow').append(html);
       $('.new_message')[0].reset();
       $('.right__contents--bellow').animate({scrollTop: $('.right__contents--bellow')[0].scrollHeight}, 'fast');
-      $('.form__submit').prop('disabled', false);
+      // $('.form__submit').prop('disabled', false);
       
     })
     .fail(function(){
