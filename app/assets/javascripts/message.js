@@ -2,7 +2,7 @@
 $(function(){
   function buildHTML(message){
     
-      var image = (message.image.url) ? `<image class="lower--message__image right__contents--bellow__box-message" src="${message.image.url}">`:"";
+      var image = (message.image_url) ? `<image class="lower--message__image right__contents--bellow__box-message" src="${message.image_url}">`:"";
       var content = (message.content) ? `<div class="right__contents--bellow__box-message">${message.content}</div>` : "";
 
     var html = `<div class= "right__contents--bellow__box" data-message-id="${message.id}">
