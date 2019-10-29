@@ -5,9 +5,9 @@ $(function(){
       var image = (message.image_url) ? `<image class="lower--message__image right__contents--bellow__box-message" src="${message.image_url}">`:"";
       var content = (message.content) ? `<div class="right__contents--bellow__box-message">${message.content}</div>` : "";
 
-    var html = `<div class= "right__contents--bellow__box" data-message-id="${message.id}">
-                  <div class= "right__contents--bellow__box--name">${message.name}</div>
-                  <div class= "right__contents--bellow__box--time">${message.created_at}</div>
+    var html = `<div class="right__contents--bellow__box" data-message-id="${message.id}">
+                  <div class="right__contents--bellow__box-name">${message.name}</div>
+                  <div class="right__contents--bellow__box-time">${message.created_at}</div>
                   ${content}
                   ${image}
                 </div>`
